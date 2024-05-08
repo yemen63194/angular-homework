@@ -1,0 +1,12 @@
+<div *ngFor="let R of listResidences">
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="R.image" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{R.name}}</h5>
+          <p class="card-text">{{R.address}}</p>
+          <a [routerLink]="['/apartements',R.id]" class="btn btn-primary">Show apartements</a>
+        </div>
+      </div>
+
+</div> 

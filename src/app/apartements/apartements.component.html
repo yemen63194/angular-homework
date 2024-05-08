@@ -1,0 +1,21 @@
+<h1>List apartments</h1>
+
+<div *ngIf="listApartments.length > 0">
+  <div *ngFor="let A of listApartments">
+    <div class="card" style="width: 18rem;" *ngIf="filterBySurface(A)">
+      <div class="card-body">
+        <div>
+          <label for="sfiltrage">Filter with surface:</label>
+          <input type="number" id="sfiltrage" [ngModel="sfiltrage" />
+        </div>
+        <h5 class="card-title">{{A.appartNum}}</h5>
+        <p class="card-text">{{A.description}}</p>
+        <a (click)="addToFavorites(A)" class="btn btn-primary">ADD TO FAVORIES</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #alt>
+  <h2>No apartments</h2>
+</ng-template>
